@@ -20,9 +20,12 @@ ENV NODE_ENV=production
 ENV DISCORD_TOKEN=${DISCORD_TOKEN}
 WORKDIR /usr/src/app
 
+RUN apk add --no-cache tini
+
 COPY --from=builder /usr/src/app/lib ./lib
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 
 USER node
+ENTRYPOINT ["/sbin/tini", "--"]
 CMD [ "node", "lib/index.js" ]
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "lib/healthcheck.js" ]
