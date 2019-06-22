@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# myself
+Dockerfile
+
+# hidden files
+.dockerignore
+.eslint*
+.git
+.gitignore
+.prettierrc
+
+# misc
+lib
+LICENSE
+README.md
+*.log
+*.sh
