@@ -1,10 +1,10 @@
 #!/bin/bash
+DOCKER_IMAGE_NAME=mika-sandbox/docker-discord-websocket-bot
 
 # build
-docker build . --tag docker-discord-websocket-bot:develop
-
-# cleanup intermediate images
-docker rmi -f $(docker images -q --filter label=stage=intermediate)
+echo "Building Docker image for this repository"
+docker build . --tag $DOCKER_IMAGE_NAME:develop $*
 
 # linting
-dockle docker-discord-websocket-bot:develop
+echo "Linting Dockerfile"
+dockle $DOCKER_IMAGE_NAME:develop
