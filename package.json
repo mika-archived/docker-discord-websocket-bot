@@ -7,6 +7,9 @@
   "author": "Mikazuki Fuyuno <mikazuki_fuyuno@outlook.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "discord.js": "^11.5.1"
   },
