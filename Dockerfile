@@ -6,12 +6,13 @@ LABEL stage=intermediate
 # for node-gyp building
 RUN apk add --no-cache python make g++
 
-COPY . ./
+COPY package.json yarn.lock tsconfig.json ./
+RUN yarn install --frozen-lockfile
 
-RUN yarn install --frozen-lockfile && \
-  yarn run build && \
-  rm -r node_modules && \
-  yarn install --frozen-lockfile --production
+COPY . ./
+RUN yarn run build
+
+RUN rm -r node_modules && yarn install --frozen-lockfile --production
 
 # App
 FROM node:12.4-alpine
