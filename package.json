@@ -1,0 +1,28 @@
+{
+  "name": "@mika-sandbox/docker-discord-websocket-bot",
+  "version": "1.0.0",
+  "description": "Discord WebSocket Bot on Docker",
+  "main": "lib/index.js",
+  "repository": "ssh://git@github.com/mika-sandbox/docker-discord-websocket-bot.git",
+  "author": "Mikazuki Fuyuno <mikazuki_fuyuno@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^22.7.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.2"
+  }
+}
